@@ -13,6 +13,7 @@ from minimal_agent.config import Config, load_config
 from minimal_agent.llm import LLMProvider
 from minimal_agent.session import SessionManager
 from minimal_agent.tools.calculator import CalculatorTool
+from minimal_agent.tools.read_file import ReadFileTool
 from minimal_agent.tools.registry import ToolRegistry
 from minimal_agent.tools.search import SearchTool
 from minimal_agent.tools.todo import TodoAddTool, TodoDoneTool, TodoListTool
@@ -39,6 +40,7 @@ def _get_logger() -> logging.Logger:
 def _build_registry() -> ToolRegistry:
     registry = ToolRegistry()
     registry.register(CalculatorTool())
+    registry.register(ReadFileTool())
     registry.register(SearchTool())
     registry.register(WeatherTool())
     registry.register(TodoAddTool())
